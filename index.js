@@ -12,3 +12,30 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Pull your server into this file and start it!
 */
+require('dotenv').config();
+
+console.log(process.env.PORT, process.env.NODE_ENV);
+const server = require('./api/server');
+
+const PORT = process.env.PORT || 9000;
+
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+})
+
+// const express = require('express');
+// const cors = require('cors');
+// const app = express();
+// server.use(express.json());
+// server.use(cors());
+
+// const projectRouter = require('./api/projects/projects-router');
+
+// server.use('/api/projects', projectRouter);
+
+
+// server.get('/api/projects', (req, res) => {
+//     res.json({message: 'Projects route working!' });
+// });
+
+
